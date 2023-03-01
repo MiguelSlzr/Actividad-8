@@ -11,47 +11,38 @@ public class GrupoDePersonas1 extends Persona {
 		this.esAlto = esAlto;
 	}
 	
-	public void setAlto(boolean esAlto){
-		this.esAlto = esAlto;
+	
+	
+	
+	
+	
+
+	
+	
+	public boolean getMayorDeEdad() {
+		return mayorDeEdad;
 	}
 	
 	public void setMayoriaEdad(boolean mayorDeEdad){
 		this.mayorDeEdad = mayorDeEdad;
 	}
 	
-	
-	
-	public String getNombre(){
-		return nombre;
-	}
-	
-	public boolean getTieneLentes() {
-		return tieneLentes;
-	}
-	
-	public boolean getMayorDeEdad() {
-		return mayorDeEdad;
-	}
-	
-	public boolean getHaceEjercicio() {
-		return haceEjercicio;
+	public void setAlto(boolean esAlto){
+		this.esAlto = esAlto;
 	}
 	
 	public boolean getEsAlto() {
 		return esAlto;
 	}
 	
-	public void setNombre(String nombre){
-		this.nombre = nombre;
-	}
 	
-	public void setLentes(boolean lentes){
-		this.tieneLentes = lentes;
-	}
 	
-	public void setEjercicio(boolean ejercicio){
-		this.haceEjercicio = ejercicio;
-	}
+	
+	
+	
+	
+	
+	
+	
 }
-	
 	

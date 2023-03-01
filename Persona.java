@@ -2,12 +2,11 @@ package Actividad8;
 
 public abstract class Persona {
 	public String nombre;
-	public boolean tieneLentes = true;
-	public boolean haceEjercicio = true;
-	public boolean mayoriaEdad = true;
-	public boolean esAlto = true;
+	public boolean tieneLentes;
+	public boolean haceEjercicio;
+
 	
-	//ESTOS NO FUNCIONAN SI NO SON PUBLICOS
+	
 	
 	
 	public Persona(String nombre, boolean tieneLentes, boolean haceEjercicio){
@@ -15,6 +14,10 @@ public abstract class Persona {
 		this.tieneLentes = tieneLentes;
 		this.haceEjercicio = haceEjercicio;
 	
+	}
+	
+	public String getNombre(){
+		return nombre;
 	}
 	
 	public void setNombre(String nombre){
@@ -25,25 +28,17 @@ public abstract class Persona {
 		this.tieneLentes = lentes;
 	}
 	
+	public boolean getTieneLentes() {
+		return tieneLentes;
+	}
+	
 	public void setEjercicio(boolean ejercicio){
 		this.haceEjercicio = ejercicio;
 	}
 	
-	
-	
-	public void setMayoriaEdad(boolean edad){
-		this.mayoriaEdad = edad;
+	public boolean getHaceEjercicio() {
+		return haceEjercicio;
 	}
-	
-	public void setAlto(boolean altura){
-		this.esAlto = altura;
-	}
-	
-	public abstract String getNombre();
-	public abstract boolean getTieneLentes();
-	public abstract boolean getMayorDeEdad();
-	public abstract boolean getHaceEjercicio();
-	public abstract boolean getEsAlto();
 	
 	//DEBO ESCRIBIR TODOS LOS METODOS DE LAS 10 PERSONAS EN ESTA CLASE ABSTRACTA
 }

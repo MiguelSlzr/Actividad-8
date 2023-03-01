@@ -6,25 +6,39 @@ public class Main {
 		
 		Random random = new Random();
 		int randomNumber = random.nextInt(2);
+		
 		String[] arregloNombres = {"Luis", "Juan", "Ana", "Maria", "Pedro", "Angel", "Rubi", "Sofia", "Francisco", "Jose"};
+		Persona[] personaje = new Persona[10];
 		int[] arregloRandom = new int[10];
-		int bandera = 0;
-/*		String nombre = "";
-		boolean tieneLentes = false;
-		boolean haceEjercicio = false;
+		int[] A = new int[10];
+		int k = A.length;
+
+		int i = 0;
+	
+		String nombre = "";
+		boolean tieneLentes;
+		boolean haceEjercicio;
 		
-		boolean mayorDeEdad = false;
-		boolean esAlto = false;
-		boolean esEstudiante = false;
-		boolean tieneTrabajo = false;
-		boolean tieneFamilia = false;
-		boolean tieneEnfermedad = false;
+		boolean mayorDeEdad;
+		boolean esAlto;
+		boolean esEstudiante;
+		boolean tieneTrabajo;
+		boolean tieneFamilia;
+		boolean tieneEnfermedad;
 		
-		Boolean[] arregloAtributos = {tieneLentes, mayorDeEdad, haceEjercicio, esAlto, esEstudiante, tieneTrabajo, tieneFamilia, tieneEnfermedad};
+		Boolean[] arregloAtributos = {true, false, false, false, false, false, false, false};
 		
+		tieneLentes = arregloAtributos[0] ;
+		haceEjercicio = arregloAtributos[1] ;
 		
+		mayorDeEdad = arregloAtributos[2] ;
+		esAlto = arregloAtributos[3] ;
+		esEstudiante = arregloAtributos[4] ;
+		tieneTrabajo = arregloAtributos[5] ;
+		tieneFamilia = arregloAtributos[6] ;
+		tieneEnfermedad = arregloAtributos[7] ;
 		
-		for(int i = 0; i <= 6; i++) {
+		for( i = 0; i <= 7; i++) {
 			randomNumber = random.nextInt(2);
 			System.out.println(randomNumber);
 			
@@ -35,16 +49,19 @@ public class Main {
 				arregloAtributos[i] = false;
 			}
 		}
+		
+		
+		for( i = 0; i <= 7; i++) {
 
-		
-		
-		Persona persona1 = new GrupoDePersonas1("Juan", tieneLentes, haceEjercicio, mayorDeEdad, esAlto);
-		
-		for(int i = 0; i <= 6; i++) {
-			randomNumber = random.nextInt(2);
 			
 			System.out.println(arregloAtributos[i]);
 		}
+		
+		System.out.println(tieneLentes + "hola");
+		
+		GrupoDePersonas1 persona1 = new GrupoDePersonas1("Juan", arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
+		
+		System.out.println(tieneLentes + "hola");
 		
 		//persona1.setNombre(nombre);
 		System.out.println(persona1.getNombre());
@@ -60,30 +77,21 @@ public class Main {
 		
 		persona1.setAlto(esAlto);
 		System.out.println(persona1.getEsAlto());
-		*/
-		for(int i = 0; i <= 9; i++) {
-			randomNumber = random.nextInt(9);
-			
-			
-				if (randomNumber == (arregloRandom[0] || randomNumber == arregloRandom[1])) {
-					
-				}
-				else {
-					bandera = 1;
-				}
-			
-			if(bandera == 0) {
-			arregloRandom[i] = randomNumber;
-			bandera = 0;
-			}
-		}	
 		
-		
-			
-		
-		for(int i = 0; i <= 9; i++) {	
-			System.out.println(arregloRandom[i]);
+		for( i = 0; i <= 9; i++) {
+			A[i] = i;
 		}
+		
+		
+		randomNumber = random.nextInt(k);
+		
+		//personaje[i] = new GrupoDePersonas1(arregloNombres[B[randomNumber]]);
+		
+		//for( i = 0; i <= 9; i++) {	
+		//	System.out.println(A[i]);
+		//}
+		
+
 		
 		
 		
