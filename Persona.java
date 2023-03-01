@@ -1,32 +1,23 @@
 package Actividad8;
 
 public abstract class Persona {
-	private String nombre;
-	private boolean tieneLentes;
-	private boolean mayorDeEdad;
-	private boolean haceEjercicio;
-	private boolean esAlto;
+	public String nombre;
+	public boolean tieneLentes = true;
+	public boolean haceEjercicio = true;
+	public boolean mayoriaEdad = true;
+	public boolean esAlto = true;
 	
-	private boolean esEstudiante;
-	private boolean tieneTrabajo;
-	private boolean tieneFamilia;
-	private boolean tieneEnfermedad;
-
+	//ESTOS NO FUNCIONAN SI NO SON PUBLICOS
 	
-	public Persona(String nombre, boolean tieneLentes, boolean mayorDeEdad, boolean haceEjercicio, boolean esAlto, boolean esEstudiante, boolean tieneTrabajo, boolean tieneFamilia, boolean tieneEnfermedad){
+	
+	public Persona(String nombre, boolean tieneLentes, boolean haceEjercicio){
 		this.nombre = nombre;
 		this.tieneLentes = tieneLentes;
-		this.mayorDeEdad = mayorDeEdad;
 		this.haceEjercicio = haceEjercicio;
-		this.esAlto = esAlto;
-		this.esEstudiante = esEstudiante;
-		this.tieneTrabajo = tieneTrabajo;
-		this.tieneFamilia = tieneFamilia;
-		this.tieneEnfermedad = tieneEnfermedad;
-		
+	
 	}
 	
-	public void setName(String nombre){
+	public void setNombre(String nombre){
 		this.nombre = nombre;
 	}
 	
@@ -34,31 +25,25 @@ public abstract class Persona {
 		this.tieneLentes = lentes;
 	}
 	
-	public void setMayoriaEdad(boolean mayoriaEdad){
-		this.mayorDeEdad = mayoriaEdad;
-	}
-	
 	public void setEjercicio(boolean ejercicio){
 		this.haceEjercicio = ejercicio;
 	}
 	
-	public void setAlto(boolean esAlto){
-		this.esAlto = esAlto;
+	
+	
+	public void setMayoriaEdad(boolean edad){
+		this.mayoriaEdad = edad;
 	}
 	
-	public void setEstudiante(boolean estudiante){
-		this.esEstudiante = estudiante;
+	public void setAlto(boolean altura){
+		this.esAlto = altura;
 	}
 	
-	public void setTrabajador(boolean trabajador){
-		this.tieneTrabajo = trabajador;
-	}
+	public abstract String getNombre();
+	public abstract boolean getTieneLentes();
+	public abstract boolean getMayorDeEdad();
+	public abstract boolean getHaceEjercicio();
+	public abstract boolean getEsAlto();
 	
-	public void setFamilia(boolean familia){
-		this.tieneFamilia = familia;
-	}
-	
-	public void setEnfermo(boolean enfermo){
-		this.tieneEnfermedad = enfermo;
-	}
+	//DEBO ESCRIBIR TODOS LOS METODOS DE LAS 10 PERSONAS EN ESTA CLASE ABSTRACTA
 }

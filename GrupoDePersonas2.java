@@ -2,18 +2,39 @@ package Actividad8;
 
 public class GrupoDePersonas2 extends Persona {
 	
+	private boolean esEstudiante;
+	private boolean tieneTrabajo;
 	
-	public GrupoDePersonas2(String nombre, boolean tieneLentes, boolean mayorDeEdad, boolean haceEjercicio, boolean esAlto, boolean esEstudiante, boolean tieneTrabajo, boolean tieneFamilia, boolean tieneEnfermedad) {
-		super(nombre, tieneLentes, mayorDeEdad, haceEjercicio, esAlto, esEstudiante, tieneTrabajo, tieneFamilia, tieneEnfermedad);
-	}
-	
-	public Persona crearPersona2(String nombre, boolean esEstudiante, boolean tieneTrabajo, boolean tieneFamilia, boolean tieneEnfermedad) {
-		Persona miPersona = new GrupoDePersonas2();
-		return miPersona;
+	public GrupoDePersonas2(String nombre, boolean tieneLentes, boolean haceEjercicio, boolean esEstudiante, boolean tieneTrabajo) {
+		super(nombre, tieneLentes, haceEjercicio);
+		this.esEstudiante = esEstudiante;
+		this.tieneTrabajo = tieneTrabajo;
 	}
 
 	
-	public String setName(){
+	public void setEstudiante(boolean estudiante){
+		this.esEstudiante = estudiante;
+	}
+	
+	public void setTrabajador(boolean trabajador){
+		this.tieneTrabajo = trabajador;
+	}
+	
+	
+	
+	public String getNombre(){
 		return nombre;
+	}
+	
+	public void setNombre(String nombre){
+		this.nombre = nombre;
+	}
+	
+	public void setLentes(boolean lentes){
+		this.tieneLentes = lentes;
+	}
+	
+	public void setEjercicio(boolean ejercicio){
+		this.haceEjercicio = ejercicio;
 	}
 }
