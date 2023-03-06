@@ -10,31 +10,42 @@ public class GrupoDePersonas2 extends Persona {
 		this.esEstudiante = esEstudiante;
 		this.tieneTrabajo = tieneTrabajo;
 	}
+	
+	public GrupoDePersonas2(boolean tieneLentes, boolean haceEjercicio, boolean esEstudiante, boolean tieneTrabajo){
+		super(tieneLentes, haceEjercicio);
+		this.esEstudiante = esEstudiante;
+		this.tieneTrabajo = tieneTrabajo;
+	}
 
 	
-	public void setEstudiante(boolean estudiante){
-		this.esEstudiante = estudiante;
+	public boolean getEstudiante() {
+		return esEstudiante;
 	}
 	
-	public void setTrabajador(boolean trabajador){
-		this.tieneTrabajo = trabajador;
+	public void setEstudiante(boolean esEstudiante){
+		this.esEstudiante = esEstudiante;
 	}
 	
-	
-	
-	public String getNombre(){
-		return nombre;
+	public void setTrabajador(boolean tieneTrabajo){
+		this.tieneTrabajo = tieneTrabajo;
 	}
 	
-	public void setNombre(String nombre){
-		this.nombre = nombre;
+	public boolean getTrabajador() {
+		return tieneTrabajo;
 	}
 	
-	public void setLentes(boolean lentes){
-		this.tieneLentes = lentes;
+	public boolean getMayorDeEdad() {
+		return false;
 	}
 	
-	public void setEjercicio(boolean ejercicio){
-		this.haceEjercicio = ejercicio;
+	public boolean getEsAlto() {
+		return false;
 	}
+
+	public void setMayoriaEdad(boolean edad) {
+	}
+	
+	public void setAlto(boolean esAlto){
+	}
+	
 }

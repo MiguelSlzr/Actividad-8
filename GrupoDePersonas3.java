@@ -1,4 +1,4 @@
-package Actividad8;
+/*package Actividad8;
 
 public class GrupoDePersonas3 extends Persona {
 	
@@ -15,33 +15,37 @@ public class GrupoDePersonas3 extends Persona {
 
 
 	
-	public String setName(){
-		return nombre;
-	}
 	
 	public void setFamilia(boolean familia){
 		this.tieneFamilia = familia;
+	}
+	
+	public boolean getFamilia() {
+		return tieneFamilia;
 	}
 	
 	public void setEnfermo(boolean enfermo){
 		this.tieneEnfermedad = enfermo;
 	}
 	
-	
-	
-	public String getNombre(){
-		return nombre;
+	public boolean getEnfermedad() {
+		return tieneEnfermedad;
+	}
+	public boolean getEstudiante() {
+		return false;
 	}
 	
-	public void setNombre(String nombre){
-		this.nombre = nombre;
+	public boolean getTrabajador() {
+		return false;
 	}
 	
-	public void setLentes(boolean lentes){
-		this.tieneLentes = lentes;
+	public boolean getMayorDeEdad() {
+		return false;
 	}
 	
-	public void setEjercicio(boolean ejercicio){
-		this.haceEjercicio = ejercicio;
+	public boolean getEsAlto() {
+		return false;
 	}
-}
+	
+
+}*/

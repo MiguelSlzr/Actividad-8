@@ -11,12 +11,12 @@ public class GrupoDePersonas1 extends Persona {
 		this.esAlto = esAlto;
 	}
 	
+	public GrupoDePersonas1(boolean tieneLentes, boolean haceEjercicio, boolean esAlto, boolean mayorDeEdad){
+		super(tieneLentes, haceEjercicio);
+		this.mayorDeEdad = mayorDeEdad;
+		this.esAlto = esAlto;
+	}
 	
-	
-	
-	
-	
-
 	
 	
 	public boolean getMayorDeEdad() {
@@ -34,8 +34,19 @@ public class GrupoDePersonas1 extends Persona {
 	public boolean getEsAlto() {
 		return esAlto;
 	}
+	public boolean getEstudiante() {
+		return false;
+	}
+	public boolean getTrabajador() {
+		return false;
+	}
 	
+	public void setEstudiante(boolean esEstudiante){
+	}
 	
+	public void setTrabajador(boolean tieneTrabajo){
+	}
+
 	
 	
 	
@@ -45,4 +56,5 @@ public class GrupoDePersonas1 extends Persona {
 	
 	
 }
+	
 	

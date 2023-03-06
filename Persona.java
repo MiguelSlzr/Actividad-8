@@ -13,8 +13,20 @@ public abstract class Persona {
 		this.nombre = nombre;
 		this.tieneLentes = tieneLentes;
 		this.haceEjercicio = haceEjercicio;
-	
 	}
+	
+	public Persona(boolean tieneLentes, boolean haceEjercicio){
+		this.tieneLentes = tieneLentes;
+		this.haceEjercicio = haceEjercicio;
+	}
+	
+	public Persona(String nombre, boolean tieneLentes, boolean haceEjercicio, boolean mayorDeEdad, boolean esAlto, boolean esEstudiante, boolean tieneTrabajo){
+		this.nombre = nombre;
+		this.tieneLentes = tieneLentes;
+		this.haceEjercicio = haceEjercicio;
+	}
+	
+	
 	
 	public String getNombre(){
 		return nombre;
@@ -39,6 +51,16 @@ public abstract class Persona {
 	public boolean getHaceEjercicio() {
 		return haceEjercicio;
 	}
+	
+	public abstract boolean getMayorDeEdad();
+	public abstract void setMayoriaEdad(boolean edad);
+	public abstract boolean getEsAlto();
+	public abstract void setAlto(boolean altura);
+	public abstract boolean getEstudiante();
+	public abstract void setEstudiante(boolean estudiante);
+	public abstract boolean getTrabajador();
+	public abstract void setTrabajador(boolean trabajador);
+
 	
 	//DEBO ESCRIBIR TODOS LOS METODOS DE LAS 10 PERSONAS EN ESTA CLASE ABSTRACTA
 }
