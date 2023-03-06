@@ -14,6 +14,7 @@ public class Main {
 		Persona[] personaje = new Persona[10];
 		Persona[] personajeRandom = new Persona[10];
 		Persona[] atributosPersona = new Persona[10];
+		Persona[] atributosRandom = new Persona[10];
 		int bandera = 0;
 		
 		int[] A = new int[10];
@@ -267,6 +268,7 @@ public class Main {
 				if(B[randomNumber] == B[h]){
 			
 					personajeRandom[B[randomNumber]] = personaje[g];
+					atributosRandom[B[randomNumber]] = atributosPersona[g];
 					
 					if(g <= 4) {
 						
@@ -314,7 +316,7 @@ public class Main {
 		System.out.println(" ");
 		
 		//---------------------------------------------------------------------------------------------------
-		System.out.println("Bienvenido al juego adivina quien creado por mi(version aun en desarrollo)");
+/*		System.out.println("Bienvenido al juego adivina quien creado por mi(version aun en desarrollo)");
 		System.out.println("Este juego consiste de 3 preguntas que usted va a escoger para adivinar al personaje: ");
 		randomNumber = random.nextInt(10);
 		adivinarPersonaje = personajeRandom[randomNumber];
@@ -481,14 +483,95 @@ public class Main {
 		System.out.println("Incorrecto. Gracias por jugar. El personaje a adivinar era: " + personajeRandom[randomNumber].getNombre());
 	}
 		
-		
+*/		
+		System.out.println(Arrays.toString(primerGrupo));
+		bandera = 0;
 		//FALTA LA COMPROBACIÓN DE QUE SON O NO SON IGUALES
+		
+
 		for(i = 0; i <= 9; i++){
-			for(j = 0; j <= 9; j++) {
-				if(personajeRandom[i] == personajeRandom[j]) {
-					//System.out.println(i + " es igual a " + j);
+			for(int j = 0; j <= 9; j++) {
+				if(i == j) {
+					break;
+				}
+				
+				if(atributosRandom[i].getTieneLentes() == atributosRandom[j].getTieneLentes()) {
+					if(atributosRandom[i].getHaceEjercicio() == atributosRandom[j].getHaceEjercicio()) {
+						if(atributosRandom[i].getMayorDeEdad() == atributosRandom[j].getMayorDeEdad()) {
+							if(atributosRandom[i].getEsAlto() == atributosRandom[j].getEsAlto()) {
+								if(atributosRandom[i].getEstudiante() == atributosRandom[j].getEstudiante()) {
+									if(atributosRandom[i].getTrabajador() == atributosRandom[j].getTrabajador()) {
+										
+										
+										System.out.println(i + " es igual a " + j);	
+										
+										for( k = 0; k <= 9; k++ ) {
+											for(int l = 0; l < 5; l++) {
+												if(k == primerGrupo[l]) {
+													for(int m = 0; m <= 7; m++) {
+														randomNumber = random.nextInt(2);
+														//System.out.println(randomNumber);
+														
+														if (randomNumber == 1) {
+															arregloAtributos[m] = true;
+														}
+														else {
+															arregloAtributos[m] = false;
+														}
+													}
+														GrupoDePersonas1 persona1 = new GrupoDePersonas1(personajeRandom[i].getNombre(), arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
+														GrupoDePersonas1 atributosPersona1 = new GrupoDePersonas1(arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
+														
+
+														persona1.setLentes(arregloAtributos[0]);
+														persona1.setEjercicio(arregloAtributos[1]);
+														persona1.setMayoriaEdad(arregloAtributos[2]);
+														persona1.setAlto(arregloAtributos[3]);
+														
+														personajeRandom[i] = persona1;
+														atributosPersona[i] = atributosPersona1;
+	
+													
+													bandera = 1;
+												}
+											}
+											
+											if(bandera == 0) {
+												for(int m = 0; m <= 7; m++) {
+													randomNumber = random.nextInt(2);
+													//System.out.println(randomNumber);
+													
+													if (randomNumber == 1) {
+														arregloAtributos[m] = true;
+													}
+													else {
+														arregloAtributos[m] = false;
+													}
+												}
+													GrupoDePersonas1 persona2 = new GrupoDePersonas1(personajeRandom[i].getNombre(), arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
+													GrupoDePersonas1 atributosPersona2 = new GrupoDePersonas1(arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
+													
+
+													persona2.setLentes(arregloAtributos[0]);
+													persona2.setEjercicio(arregloAtributos[1]);
+													persona2.setMayoriaEdad(arregloAtributos[2]);
+													persona2.setAlto(arregloAtributos[3]);
+													
+													personajeRandom[i] = persona2;
+													atributosPersona[i] = atributosPersona2;
+
+											bandera = 0;
+										}
+									}
+								}
+							}			
+						}
+					}
 				}
 			}
 		}
 	}
+
+		
+}
 }
