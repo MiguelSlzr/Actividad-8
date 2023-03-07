@@ -320,7 +320,7 @@ public class Main {
 		System.out.println("Este juego consiste de 3 preguntas que usted va a escoger para adivinar al personaje: ");
 		randomNumber = random.nextInt(10);
 		adivinarPersonaje = personajeRandom[randomNumber];
-		
+
 		System.out.println(" ");	
 		System.out.println("Escoja una de las siguientes preguntas: ");
 		System.out.println("1. ¿El personaje tiene lentes?");
@@ -332,10 +332,8 @@ public class Main {
 		
 		
 		i = 0;
-		int n = 0;
-		int m = 0;
-		int o = C.length-1;
 		int j = 2;
+		
 		
 		while(i <= 2) {
 			opcion = scan.nextInt();
@@ -343,93 +341,71 @@ public class Main {
 			case 1:
 				if(adivinarPersonaje.getTieneLentes()) {
 					System.out.println("El personaje sí tiene lentes");
-					
-					for(m = 0; m <= o; m++) {
-						
-						if(personajeRandom[C[m]].getTieneLentes()) {
-							D[n] = C[m];
-							n++;
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getTieneLentes() == false) {
+								personajeRandom[x] = null;
+							}
 						}
 					}
-					
-					m = 0;
-					o = n-1;
-					while (m <= n-1){
-						C[m] = D[m];
-						m++;
-					}
-					
-					
-					
+				
 				}else {
 					System.out.println("El personaje no tiene lentes");
-					for(m = 0; m <= o; m++) {
-						
-						if(personajeRandom[C[m]].getTieneLentes() == false) {
-							D[n] = C[m];
-							n++;
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getTieneLentes()) {
+								personajeRandom[x] = null;
+							}
 						}
-					}
-					
-					m = 0;
-					o = n-1;
-					while (m <= n-1){
-						C[m] = D[m];
-						m++;
 					}
 				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
-				
-				
-					
-				
-				
 				break;
-			
+				
 			case 2:
 				if(adivinarPersonaje.getHaceEjercicio()) {
 					System.out.println("El personaje sí hace ejercicio");
-					
-					for(m = 0; m <= o; m++) {
-						
-						if(personajeRandom[C[m]].getHaceEjercicio()) {
-							D[n] = C[m];
-							n++;
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getHaceEjercicio() == false) {
+								personajeRandom[x] = null;
+							}
 						}
 					}
 					
-					m = 0;
-					o = n-1;
-					while (m <= n-1){
-						C[m] = D[m];
-						m++;
-					}
 				}else {
 					System.out.println("El personaje no hace ejercicio");
-					
-					for(m = 0; m <= o; m++) {
-						
-						if(personajeRandom[C[m]].getTieneLentes() == false) {
-							D[n] = C[m];
-							n++;
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getHaceEjercicio()) {
+								personajeRandom[x] = null;
+							}
 						}
 					}
 					
-					m = 0;
-					o = n-1;
-					while (m <= n-1){
-						C[m] = D[m];
-						m++;
-					}
-				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
+				}
 				break;
 			
 			case 3:
 				if(adivinarPersonaje.getEstudiante()) {
 					System.out.println("El personaje sí es estudia");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getEstudiante() == false) {
+								personajeRandom[x] = null;
+							}
+						}
+					}
 				}else {
 					System.out.println("El personaje no estudia");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+							if(personajeRandom[x].getEstudiante()) {
+								personajeRandom[x] = null;
+							}
+						}
+					}
 				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
 				break;
@@ -437,8 +413,22 @@ public class Main {
 			case 4:
 				if(adivinarPersonaje.getTrabajador()) {
 					System.out.println("El personaje sí trabaja");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getTrabajador() == false) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}else {
 					System.out.println("El personaje no trabaja");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getTrabajador()) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
 				break;
@@ -446,8 +436,22 @@ public class Main {
 			case 5:
 				if(adivinarPersonaje.getMayorDeEdad()) {
 					System.out.println("El personaje es adulto");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getMayorDeEdad() == false) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}else {
 					System.out.println("El personaje no es adulto");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getMayorDeEdad()) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
 				break;
@@ -455,8 +459,22 @@ public class Main {
 			case 6:
 				if(adivinarPersonaje.getEsAlto()) {
 					System.out.println("El personaje sí es alto");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getEsAlto() == false) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}else {
 					System.out.println("El personaje no es alto");
+					for(int x = 0; x < personajeRandom.length; x++) {
+						if(personajeRandom[x] != null) {
+						if(personajeRandom[x].getEsAlto()) {
+							personajeRandom[x] = null;
+						}
+						}
+					}
 				}
 				System.out.println("Quedan " + j + " preguntas disponibles");
 				break;
@@ -465,12 +483,21 @@ public class Main {
 				System.out.println("Esa no es una opción, por favor vuelva a intentar... tiene un intento menos");
 			break;
 			}
+			
+			System.out.println(" ");
+			System.out.println("El personaje a adivinar ahora está entre estos:");
+			
+			for(int x = 0; x <= 9; x++) {
+				if(personajeRandom[x] != null) {
+					System.out.println(x + ". " + personajeRandom[x].getNombre());
+				}
+			}
+	
 			i++;
 			j--;
+			
 			System.out.println(" ");
-			for(m = 0; m <= o; m++) {
-				System.out.println(personajeRandom[C[m]].getNombre());
-			}
+		
 			
 				
 		}
@@ -482,96 +509,248 @@ public class Main {
 	}else {
 		System.out.println("Incorrecto. Gracias por jugar. El personaje a adivinar era: " + personajeRandom[randomNumber].getNombre());
 	}
+		*/
 		
-*/		
-		System.out.println(Arrays.toString(primerGrupo));
-		bandera = 0;
-		//FALTA LA COMPROBACIÓN DE QUE SON O NO SON IGUALES
 		
-
-		for(i = 0; i <= 9; i++){
-			for(int j = 0; j <= 9; j++) {
-				if(i == j) {
-					break;
+		
+		
+		
+/*		
+	int j = 0;
+		int x = 0;
+		int max = 0;
+		int topCounter = 0;
+		boolean banderaBoolean;
+		
+		
+		for(i = 0; i < personajeRandom.length; i++) {
+			for(j = 0; j < personajeRandom.length; j++) {
+				if(personajesIguales(personajeRandom[i], personajeRandom[j]) != null) {
+				
+				banderaBoolean = true;
+				while(banderaBoolean) {
+					for(k = 0; k < contador.length; k++) {
+						if(max < contador[k]){
+							max = contador[k];
+							topCounter = k;
+							
+						}
+					}
+					System.out.println(topCounter);
+					
+					if (topCounter == 0) {
+						if(personajeRandom[i].getTieneLentes()) {
+							personajeRandom[i].setLentes(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setLentes(true);
+							contador[topCounter] +=1;
+						}
+					}
+					if (topCounter == 1) {
+						if(personajeRandom[i].getHaceEjercicio()) {
+							personajeRandom[i].setEjercicio(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setEjercicio(true);
+							contador[topCounter] +=1;
+						}
+					}
+					if (topCounter == 2) {
+						if(personajeRandom[i].getEsAlto()) {
+							personajeRandom[i].setAlto(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setAlto(true);
+							contador[topCounter] +=1;
+						}
+					}
+					if (topCounter == 3) {
+						if(personajeRandom[i].getMayorDeEdad()) {
+							personajeRandom[i].setMayoriaEdad(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setMayoriaEdad(true);
+							contador[topCounter] +=1;
+						}
+					}
+					if (topCounter == 4) {
+						if(personajeRandom[i].getEstudiante()) {
+							personajeRandom[i].setEstudiante(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setEstudiante(true);
+							contador[topCounter] +=1;
+						}
+					}
+					if (topCounter == 5) {
+						if(personajeRandom[i].getTrabajador()) {
+							personajeRandom[i].setTrabajador(false);
+							contador[topCounter] -=1;
+						}
+						else{
+							personajeRandom[i].setTrabajador(true);
+							contador[topCounter] +=1;
+						}
+					}
+					
+					
+					for(k = 0; k < personajeRandom.length; k++) {
+						if(personajeRandom[i] != personajeRandom[k]) {
+							if(personajesIguales(personajeRandom[i], personajeRandom[k]) != null) {
+								banderaBoolean = true;
+								break;
+							}
+						}
+					}
+					x++;
+				}
+			}
+			
+		}
+		
+		}
+			
+		*/	
+		int j = 0;
+		int max = 0;
+		int topCounter = 0;
+		int fixChar = 0;
+		boolean banderaBoolean;
+		for(i = 0; i < personajeRandom.length; i++) {
+			for(j = 0; j <= personajeRandom.length-1; j++) {
+				if(personajesIguales(personajeRandom[i], personajeRandom[j]) != null) {
+					fixChar = j;
 				}
 				
-				if(atributosRandom[i].getTieneLentes() == atributosRandom[j].getTieneLentes()) {
-					if(atributosRandom[i].getHaceEjercicio() == atributosRandom[j].getHaceEjercicio()) {
-						if(atributosRandom[i].getMayorDeEdad() == atributosRandom[j].getMayorDeEdad()) {
-							if(atributosRandom[i].getEsAlto() == atributosRandom[j].getEsAlto()) {
-								if(atributosRandom[i].getEstudiante() == atributosRandom[j].getEstudiante()) {
-									if(atributosRandom[i].getTrabajador() == atributosRandom[j].getTrabajador()) {
-										
-										
-										System.out.println(i + " es igual a " + j);	
-										
-										for( k = 0; k <= 9; k++ ) {
-											for(int l = 0; l < 5; l++) {
-												if(k == primerGrupo[l]) {
-													for(int m = 0; m <= 7; m++) {
-														randomNumber = random.nextInt(2);
-														//System.out.println(randomNumber);
-														
-														if (randomNumber == 1) {
-															arregloAtributos[m] = true;
-														}
-														else {
-															arregloAtributos[m] = false;
-														}
-													}
-														GrupoDePersonas1 persona1 = new GrupoDePersonas1(personajeRandom[i].getNombre(), arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
-														GrupoDePersonas1 atributosPersona1 = new GrupoDePersonas1(arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
-														
-
-														persona1.setLentes(arregloAtributos[0]);
-														persona1.setEjercicio(arregloAtributos[1]);
-														persona1.setMayoriaEdad(arregloAtributos[2]);
-														persona1.setAlto(arregloAtributos[3]);
-														
-														personajeRandom[i] = persona1;
-														atributosPersona[i] = atributosPersona1;
+			}
+		}
+		System.out.println(personajeRandom[fixChar].getNombre());
+		
+		
+		banderaBoolean = true;
+		while(banderaBoolean) {
+		for(k = 0; k < contador.length; k++) {
+			if(max < contador[k]){
+				max = contador[k];
+				topCounter = k;
+				
+			}
+		}
 	
-													
-													bandera = 1;
-												}
-											}
-											
-											if(bandera == 0) {
-												for(int m = 0; m <= 7; m++) {
-													randomNumber = random.nextInt(2);
-													//System.out.println(randomNumber);
-													
-													if (randomNumber == 1) {
-														arregloAtributos[m] = true;
-													}
-													else {
-														arregloAtributos[m] = false;
-													}
-												}
-													GrupoDePersonas1 persona2 = new GrupoDePersonas1(personajeRandom[i].getNombre(), arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
-													GrupoDePersonas1 atributosPersona2 = new GrupoDePersonas1(arregloAtributos[0], arregloAtributos[1], arregloAtributos[2], arregloAtributos[3]);
-													
-
-													persona2.setLentes(arregloAtributos[0]);
-													persona2.setEjercicio(arregloAtributos[1]);
-													persona2.setMayoriaEdad(arregloAtributos[2]);
-													persona2.setAlto(arregloAtributos[3]);
-													
-													personajeRandom[i] = persona2;
-													atributosPersona[i] = atributosPersona2;
-
-											bandera = 0;
-										}
-									}
-								}
-							}			
+		
+		if (topCounter == 0) {
+			if(personajeRandom[fixChar].getTieneLentes()) {
+				personajeRandom[fixChar].setLentes(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setLentes(true);
+				contador[topCounter] +=1;
+			}
+		}
+		if (topCounter == 1) {
+			if(personajeRandom[fixChar].getHaceEjercicio()) {
+				personajeRandom[fixChar].setEjercicio(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setEjercicio(true);
+				contador[topCounter] +=1;
+			}
+		}
+		if (topCounter == 2) {
+			if(personajeRandom[fixChar].getEsAlto()) {
+				personajeRandom[fixChar].setAlto(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setAlto(true);
+				contador[topCounter] +=1;
+			}
+		}
+		if (topCounter == 3) {
+			if(personajeRandom[fixChar].getMayorDeEdad()) {
+				personajeRandom[fixChar].setMayoriaEdad(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setMayoriaEdad(true);
+				contador[topCounter] +=1;
+			}
+		}
+		if (topCounter == 4) {
+			if(personajeRandom[fixChar].getEstudiante()) {
+				personajeRandom[fixChar].setEstudiante(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setEstudiante(true);
+				contador[topCounter] +=1;
+			}
+		}
+		if (topCounter == 5) {
+			if(personajeRandom[fixChar].getTrabajador()) {
+				personajeRandom[fixChar].setTrabajador(false);
+				contador[topCounter] -=1;
+			}
+			else{
+				personajeRandom[fixChar].setTrabajador(true);
+				contador[topCounter] +=1;
+			}
+		}
+		banderaBoolean = false;
+		
+		
+		
+		System.out.println(personajeRandom[fixChar].getNombre() + ": " + nombreAtributos[0] + ": " + personajeRandom[fixChar].getTieneLentes() + ", " + nombreAtributos[1] + ": " + personajeRandom[fixChar].getHaceEjercicio() + ", " + nombreAtributos[4] + ": " + personajeRandom[fixChar].getEstudiante() + ", " + nombreAtributos[5] + ": " + personajeRandom[fixChar].getTrabajador());
+		
+		for(int l = 0; l < personajeRandom.length; l++) {
+			if(personajeRandom[fixChar] != personajeRandom[k]) {
+				if(personajesIguales(personajeRandom[fixChar], personajeRandom[k]) != null) {
+					fixChar = l;
+					banderaBoolean = true;
+					break;
+				}
+			}
+		}
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	public static Persona personajesIguales(Persona personaUno, Persona personaDos) {
+		
+		if(personaUno == personaDos) {
+			return null;
+		}
+		if(personaUno.getTieneLentes() == personaDos.getTieneLentes()) {
+			if(personaUno.getHaceEjercicio() == personaDos.getHaceEjercicio()) {
+				if(personaUno.getMayorDeEdad() == personaDos.getMayorDeEdad()) {
+					if(personaUno.getEsAlto() == personaDos.getEsAlto()) {
+						if(personaUno.getEstudiante() == personaDos.getEstudiante()) {
+							if(personaUno.getTrabajador() == personaDos.getTrabajador()) {
+								System.out.println(personaUno.getNombre() + " es igual a " + personaDos.getNombre());
+								return personaDos;
+							}
 						}
 					}
 				}
 			}
 		}
+		return null;
 	}
+}
 
-		
-}
-}
+
+
+	

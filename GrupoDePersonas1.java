@@ -5,6 +5,7 @@ public class GrupoDePersonas1 extends Persona {
 	private boolean esAlto;
 	private boolean mayorDeEdad;
 	
+	
 	public GrupoDePersonas1(String nombre, boolean tieneLentes, boolean haceEjercicio, boolean esAlto, boolean mayorDeEdad){
 		super(nombre, tieneLentes, haceEjercicio);
 		this.mayorDeEdad = mayorDeEdad;
@@ -16,6 +17,8 @@ public class GrupoDePersonas1 extends Persona {
 		this.mayorDeEdad = mayorDeEdad;
 		this.esAlto = esAlto;
 	}
+	
+	
 	
 	
 	
@@ -56,3 +59,5 @@ public class GrupoDePersonas1 extends Persona {
 	
 	
 }
+	
+	

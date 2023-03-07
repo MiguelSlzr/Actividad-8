@@ -5,9 +5,28 @@ public abstract class Persona {
 	public boolean tieneLentes;
 	public boolean haceEjercicio;
 
-	
-	
-	
+
+public boolean personajesIguales(Persona personaUno, Persona personaDos) {
+		
+		if(personaUno == personaDos) {
+			return false;
+		}
+		
+		if(personaUno.getTieneLentes() == personaDos.getTieneLentes()) {
+			if(personaUno.getHaceEjercicio() == personaDos.getHaceEjercicio()) {
+				if(personaUno.getMayorDeEdad() == personaDos.getMayorDeEdad()) {
+					if(personaUno.getEsAlto() == personaDos.getEsAlto()) {
+						if(personaUno.getEstudiante() == personaDos.getEstudiante()) {
+							if(personaUno.getTrabajador() == personaDos.getTrabajador()) {
+								return true;
+							}
+						}
+					}
+				}
+			}
+		}
+		return false;
+	}
 	
 	public Persona(String nombre, boolean tieneLentes, boolean haceEjercicio){
 		this.nombre = nombre;
