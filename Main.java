@@ -1,6 +1,7 @@
 package Actividad8;
 import java.util.Scanner;
 import java.util.Random;
+import java.io.*; 
 
 public class Main {
 	public static void main(String[] args) {
@@ -370,11 +371,40 @@ public class Main {
 		
 		
 		//---------------------------------------------------------------------------------------------------
+		Scanner scan = new Scanner(System.in);
+		String jugador;
+		int winCount;
+		
+		
+			
+			
+			FileOutputStream outStream = new FileOutputStream(outFile);
+			outStream.write(winCount);
+			outStream.close();
+
+			File file, directory;
+			String path;
+			System.out.print("Enter file path: ");
+			path = scan.nextLine();
+			file = new File(path);
+			
+			if (file.exists()) {
+			
+			
+			} else {
+				String path1 = "D:\\Users\\174720\\eclipse-workspace\\Actividades\\src\\Actividad8\\Jugadores\\";
+				String path2 = "";
+				String path3 = ".txt";
+				File usuario = new File(path);
+			}
+
+		
+		//---------------------------------------------------------------------------------------------------
 		i = 0;
 		j = 2;
 		int opcion;
 		Persona adivinarPersonaje;
-		Scanner scan = new Scanner(System.in);
+		
 		
 		System.out.println("Bienvenido al juego de adivina quien");
 		System.out.println("Este juego consiste de 3 preguntas que usted va a escoger para adivinar al personaje: ");
@@ -559,6 +589,13 @@ public class Main {
 		}else {
 		System.out.println("Incorrecto. Gracias por jugar. El personaje a adivinar era: " + personajeRandom[randomNumber].getNombre());
 		}
+		
+		//---------------------------------------------------------------------------------------------------
+		
+		
+		
+		
+		//---------------------------------------------------------------------------------------------------
 		scan.close();
 	}
 
