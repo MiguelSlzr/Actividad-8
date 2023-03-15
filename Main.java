@@ -1,7 +1,8 @@
 package Actividad8;
 import java.util.Scanner;
 import java.util.Random;
-import java.io.*; 
+import java.io.*;
+import java.io.FileWriter;
 
 public class Main {
 	public static void main(String[] args) {
@@ -371,42 +372,60 @@ public class Main {
 		
 		
 		//---------------------------------------------------------------------------------------------------
+		System.out.println("-------------------------------------------------------------------------------------"+ "\n");
 		Scanner scan = new Scanner(System.in);
-		String jugador;
-		int winCount;
-		
-		
-			
-			
-			FileOutputStream outStream = new FileOutputStream(outFile);
-			outStream.write(winCount);
-			outStream.close();
+		int juegosGanados = 0;
+		int juegosJugados = 0;
 
-			File file, directory;
-			String path;
-			System.out.print("Enter file path: ");
-			path = scan.nextLine();
+		File file, directory;
+		String path;
+		System.out.print("Jugador, ingrese su nombre: ");
+		String nombre = scan.nextLine();
+		FileWriter escribir = null;
+		PrintWriter imprimir = null;
+		FileReader leer = null;
+			
+			String directoryPath = "C:\\Users\\PC\\eclipse-workspace\\Bloque3\\src\\Actividad8\\Jugadores\\";
+			String ext = ".txt";
+			path = directoryPath+nombre+ext;
 			file = new File(path);
 			
 			if (file.exists()) {
-			
-			
+				System.out.print("Reanudando sesion... " + "\n");
+				//System.out.println(file.getParent());
+				try {
+					leer = new FileReader(file);
+					BufferedReader bufReader = new BufferedReader(leer);
+		            String line = bufReader.readLine();
+		            line = bufReader.readLine();
+		            System.out.println("Usted ha jugado " + line + " veces");
+		            juegosJugados = Integer.parseInt(line);
+		            line = bufReader.readLine();
+		            line = bufReader.readLine(); 
+		            System.out.println("De las cuales ha ganado " + line + " veces" + "\n");
+		            juegosGanados = Integer.parseInt(line);
+		            bufReader.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+				
 			} else {
-				String path1 = "D:\\Users\\174720\\eclipse-workspace\\Actividades\\src\\Actividad8\\Jugadores\\";
-				String path2 = "";
-				String path3 = ".txt";
-				File usuario = new File(path);
+			//String path1 = "D:\\Users\\174720\\eclipse-workspace\\Actividades\\src\\Actividad8\\Jugadores\\";
+				try {
+					file.createNewFile();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 			}
-
 		
 		//---------------------------------------------------------------------------------------------------
+		System.out.println("-------------------------------------------------------------------------------------"+ "\n");
 		i = 0;
 		j = 2;
 		int opcion;
 		Persona adivinarPersonaje;
 		
-		
-		System.out.println("Bienvenido al juego de adivina quien");
+		System.out.println("Bienvenido al juego de 'ADIVINA QUIEN' ");
 		System.out.println("Este juego consiste de 3 preguntas que usted va a escoger para adivinar al personaje: ");
 		randomNumber = random.nextInt(10);
 		adivinarPersonaje = personajeRandom[randomNumber];
@@ -584,19 +603,39 @@ public class Main {
 		
 		System.out.println("Adivine quién es el personaje (solo escriba el número de la persona):");
 		opcion = scan.nextInt();
+		juegosJugados +=1;
 		if(opcion == randomNumber) {
+			juegosGanados +=1;
 			System.out.println("Felicidades! Usted ha acertado.");
 		}else {
+			
 		System.out.println("Incorrecto. Gracias por jugar. El personaje a adivinar era: " + personajeRandom[randomNumber].getNombre());
 		}
 		
 		//---------------------------------------------------------------------------------------------------
+		try {
+			escribir = new FileWriter(file);
+			imprimir = new PrintWriter(escribir);
+			
+			imprimir.print("partidas jugadas\n");
+			imprimir.print(juegosJugados + "\n");
+			imprimir.print("partidas ganadas\n");
+			imprimir.print(juegosGanados + "\n");
 		
-		
-		
-		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		finally{
+			try {
+				escribir.close();
+				imprimir.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
 		//---------------------------------------------------------------------------------------------------
 		scan.close();
+	
 	}
 
 	public static Persona personajesIguales(Persona personaUno, Persona personaDos) {
@@ -620,3 +659,4 @@ public class Main {
 		return null;
 	}
 }
+	
